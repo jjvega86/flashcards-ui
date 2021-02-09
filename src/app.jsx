@@ -1,31 +1,34 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
-import './app.css';
+import Header from "./Header/header";
 
-class App extends Component{
-    constructor(props){
-        super(props);
-        this.state = {}
-    }
+import "./app.css";
 
-    render(){
-        return(
-            <Container fluid>
-            <Row>
-                <Col md={4} xs={6}>
-                <h1 className="header">Hello, World!</h1>
-                </Col>
-                <Col>
-                    <p>Welcome to my site!</p>
-                </Col>
-            </Row>
-            </Container>
-        )
-    }
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <Container fluid>
+        <Header />
+        <Row>
+          <Col md={4} xs={6}>
+            <h1 className="header">Hello, World!</h1>
+          </Col>
+          <Col>
+            <p>Welcome to my site!</p>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
 
 export default App;
