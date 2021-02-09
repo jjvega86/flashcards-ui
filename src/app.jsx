@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 import './app.css';
 
 class App extends Component{
@@ -9,9 +14,16 @@ class App extends Component{
 
     render(){
         return(
-            <div className="container">
-                <h1>Hello World!</h1>
-            </div>
+            <Container fluid>
+            <Row>
+                <Col md={4} xs={6}>
+                <h1 className="header">Hello, World!</h1>
+                </Col>
+                <Col>
+                    <p>Welcome to my site!</p>
+                </Col>
+            </Row>
+            </Container>
         )
     }
 }
