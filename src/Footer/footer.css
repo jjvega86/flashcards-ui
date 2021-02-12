@@ -4,4 +4,10 @@
     bottom:0;
     right:0;
     background-color: black;
+    color: white;
+    height: 50rm;
+}
+
+p{
+    text-align: center;
 }
