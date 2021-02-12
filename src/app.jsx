@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 import Header from "./Header/header";
+import Footer from "./Footer/footer";
 
 import "./app.css";
 
@@ -26,6 +27,7 @@ class App extends Component {
             <p>Welcome to my site!</p>
           </Col>
         </Row>
+        <Footer />
       </Container>
     );
   }
