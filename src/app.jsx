@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-
-import Header from "./NavBar/header";
-import Footer from "./Footer/footer";
-
 import "./app.css";
+
+import NavBar from './NavBar/NavBar';
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +11,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>Hello World!</div>
+      <div>
+      <NavBar />
+      </div>
     );
   }
 }
