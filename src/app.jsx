@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./app.css";
 
-import NavBar from "./NavBar/NavBar";
+import NavBar from "./NavBar/navbar";
+import Footer from './Footer/footer'
 
 class App extends Component {
   constructor(props) {
@@ -16,11 +17,10 @@ class App extends Component {
         <br></br>
         <div className="container fluid">
           <div className="row">
-            <div className="col-md-12">
-
-            </div>
+            <div className="col-md-12"></div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
