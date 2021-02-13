@@ -1,17 +1,14 @@
-import React from 'react';
-import './NavBar.css'
+import React from "react";
+import "./NavBar.css";
 
-const NavBar = () =>{
-    return (
-        <div className="navbar">
-            <h1>Tech Collect</h1>
-            <ul>
-                <li>Home</li>
-                <li>Collections</li>
-                <li>About</li>
-            </ul>
-        </div>
-    )
-}
+const NavBar = () => {
+  return (
+    <div>
+      <nav class="navbar navbar-dark bg-success">
+        <span class="navbar-brand mb-0 h1">TechCollect</span>
+      </nav>
+    </div>
+  );
+};
 
 export default NavBar;
