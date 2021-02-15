@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import "./app.css";
 
 import NavBar from "./components/NavBar/navbar";
@@ -9,7 +10,16 @@ import CardDisplay from "./components/CardDisplay/cardDisplay";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.cardCollections = []
+    this.state = {}
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:5000/api/Flashcards/collections')
+    .then(res => {
+      this.cardCollections = res.data;
+    });
+
   }
 
   render() {
