@@ -1,12 +1,14 @@
 import React from "react";
 import "./sidebar.css";
 
-const SideBar = () => {
+const SideBar = (props) => {
+    const links = props.collections.map((item, index) => {
+        return <a key={index} href="#collection3">{item.title}</a>
+    })
+    console.log(links);
   return (
     <div className="sidebar">
-      <a href="#collection1">Collection 1</a>
-      <a href="#collection2">Collection 2</a>
-      <a href="#collection3">Collection 3</a>
+        {links}
     </div>
   );
 };

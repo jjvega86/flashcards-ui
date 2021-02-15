@@ -10,14 +10,17 @@ import CardDisplay from "./components/CardDisplay/cardDisplay";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.cardCollections = []
-    this.state = {}
+    this.state = {
+      cardCollections: []
+    }
   }
 
   componentDidMount(){
     axios.get('http://localhost:5000/api/Flashcards/collections')
     .then(res => {
-      this.cardCollections = res.data;
+      const collections = res.data;
+      this.setState({cardCollections: collections})
+      console.log(this.state.cardCollections);
     });
 
   }
@@ -30,7 +33,7 @@ class App extends Component {
         <div className="container fluid">
           <div className="row">
             <div className="col-md-4">
-              <SideBar />
+              <SideBar collections={this.state.cardCollections}/>
             </div>
             <div className="col-md-8">
               <CardDisplay />
