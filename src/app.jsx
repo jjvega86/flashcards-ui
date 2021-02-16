@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./app.css";
 
-import NavBar from "./components/NavBar/navbar";
-import Footer from "./components/Footer/footer";
-import SideBar from "./components/SideBar/sidebar";
-import CardDisplay from "./components/CardDisplay/cardDisplay";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+import SideBar from "./components/SideBar/SideBar";
+import CardDisplay from "./components/CardDisplay/CardDisplay";
 
 class App extends Component {
   constructor(props) {

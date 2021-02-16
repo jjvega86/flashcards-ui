@@ -1,5 +1,5 @@
 import React from "react";
-import "./sidebar.css";
+import "./SideBar.css";
 
 
 // this is not React best practice. using className to reference an external CSS stylesheet is
