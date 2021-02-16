@@ -2,6 +2,9 @@ import React from "react";
 import "./sidebar.css";
 
 
+// this is not React best practice. using className to reference an external CSS stylesheet is
+// this is used when dynamic styling is needed at render
+// the activeStyle is used when the currently active collection is selected
 
 const activeStyle = {
     backgroundColor: 'green',
