@@ -18,3 +18,7 @@
     color: #818181;
     display: block;
 }
+
+a:visited {
+    background-color:chartreuse;
+}
