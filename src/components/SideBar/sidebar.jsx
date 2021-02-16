@@ -1,8 +1,11 @@
 import React from "react";
 import "./sidebar.css";
 
+
+
 const activeStyle = {
-    backgroundColor: 'green' 
+    backgroundColor: 'green',
+    color: 'white' 
 }
 
 const SideBar = (props) => {
