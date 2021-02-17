@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CardDisplay.css";
 import Card from "./Card/Card";
+import CardCounter from "./CardCounter/CardCounter";
 
 class CardDisplay extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class CardDisplay extends Component {
     let card = this.setCurrentCard();
     console.log(this.props.cards[this.state.currentCard]);
     return (
-      <div className="container">
+      <div className="container-fluid carddisplay">
         <div className="row">
           <div className="col-md-2">
             <button onClick={() => this.moveToPreviousCard()}>
@@ -67,6 +68,14 @@ class CardDisplay extends Component {
           </div>
           <div className="col-md-2">
             <button onClick={() => this.moveToNextCard()}> Next Card </button>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <CardCounter
+              currentCard={this.state.currentCard}
+              collectionTotal={this.props.cards.length}
+            />
           </div>
         </div>
       </div>
