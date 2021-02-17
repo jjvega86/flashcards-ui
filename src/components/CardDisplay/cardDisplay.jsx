@@ -13,7 +13,7 @@ class CardDisplay extends Component {
   moveToNextCard = () => {
     let tempCardNumber = this.state.currentCard;
     tempCardNumber++;
-    if(tempCardNumber > this.props.cards.length){
+    if(tempCardNumber > this.props.cards.length-1){
       tempCardNumber = 0;
     }
     this.setState({
@@ -23,6 +23,14 @@ class CardDisplay extends Component {
   }
 
   moveToPreviousCard = () => {
+    let tempCardNumber = this.state.currentCard;
+    tempCardNumber--;
+    if(tempCardNumber < 0){
+      tempCardNumber = this.props.cards.length-1;
+    }
+    this.setState({
+      currentCard: tempCardNumber
+    })
 
   }
 
