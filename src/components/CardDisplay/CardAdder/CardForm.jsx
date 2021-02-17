@@ -4,6 +4,7 @@ import axios from "axios";
 
 // this class will accept the id of the current collection and post both title and description to the collection
 // using a POST call in Axios on the handleSubmit function
+// PROPS: collectionId of activeCollection
 
 class CardForm extends React.Component {
   constructor(props) {
@@ -26,6 +27,13 @@ class CardForm extends React.Component {
   };
 
   addNewCard = (card) => {
+      let collectionId = this.props.collectionId;
+      axios.post(`http://localhost:5000/api/Flashcards/collections/${collectionId}`, card)
+        .then(res => {
+            console.log(res.data);
+        }).catch((err) => {
+            console.log(err);
+        })
 
   }
 
