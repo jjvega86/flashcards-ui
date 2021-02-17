@@ -10,6 +10,22 @@ class CardDisplay extends Component {
     };
   }
 
+  moveToNextCard = () => {
+    let tempCardNumber = this.state.currentCard;
+    tempCardNumber++;
+    if(tempCardNumber > this.props.cards.length){
+      tempCardNumber = 0;
+    }
+    this.setState({
+      currentCard: tempCardNumber
+    })
+
+  }
+
+  moveToPreviousCard = () => {
+
+  }
+
   render() {
     return (
       <div className="container">
@@ -21,7 +37,7 @@ class CardDisplay extends Component {
             <Card activeCard={this.props.cards[this.state.currentCard]} />
           </div>
           <div className="col-md-2">
-            <button></button>
+            <button onClick={()=>this.moveToNextCard()}>  </button>
           </div>
         </div>
       </div>
