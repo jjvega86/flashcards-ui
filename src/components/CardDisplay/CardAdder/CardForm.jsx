@@ -33,7 +33,7 @@ class CardForm extends React.Component {
       description: "",
     });
 
-    event.preventDefault();
+    
   };
 
   addNewCard = (card) => {
@@ -56,7 +56,7 @@ class CardForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Card Title:
-          <textarea
+          <input
             name="title"
             value={this.state.value}
             onChange={this.handleChange}
