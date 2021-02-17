@@ -11,8 +11,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardCollections: [],
-      activeCollection: ''
+      cardCollections: [{
+        cards: []
+      }],
+      activeCollectionIndex: 0,
     };
 
     this.makeActiveCollection = this.makeActiveCollection.bind(this);
@@ -23,19 +25,32 @@ class App extends Component {
       .get("http://localhost:5000/api/Flashcards/collections")
       .then((res) => {
         const collections = res.data;
-        this.setState({ cardCollections: collections });
+        this.setState({
+          cardCollections: collections
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
 
   makeActiveCollection = (index) => {
-    console.log(index);
     this.setState({
-      activeCollection: index
+      activeCollectionIndex: index,
     });
-    console.log(this.state.activeCollection);
   };
 
   render() {
+    if (!this.state.cardCollections) return null;
+    {
+      /*Prevent the component from rendering until data has been fetched in app.jsx*/
+    }
+    console.log(this.state.cardCollections.cards)
+    let collection = this.state.cardCollections[this.state.activeCollectionIndex]
+    let cards = collection.cards;
+    console.log(cards);
+    
+
     return (
       <div>
         <NavBar />
@@ -45,12 +60,13 @@ class App extends Component {
             <div className="col-md-4">
               <SideBar
                 collections={this.state.cardCollections}
-                activeCollection={this.state.activeCollection}
+                activeCollectionIndex={this.state.activeCollectionIndex}
                 makeActive={this.makeActiveCollection}
               />
             </div>
             <div className="col-md-8">
-              <CardDisplay />
+              <CardDisplay cards={cards}        
+              />
             </div>
           </div>
         </div>
