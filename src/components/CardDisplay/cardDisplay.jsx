@@ -79,6 +79,13 @@ class CardDisplay extends Component {
             />
           </div>
         </div>
+        <div className="row">
+          <div className="col-md-12">
+            <CardForm
+              collectionId={this.props.collectionId}
+            />
+          </div>
+        </div>
       </div>
     );
   }

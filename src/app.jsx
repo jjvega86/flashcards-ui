@@ -11,9 +11,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardCollections: [{
-        cards: []
-      }],
+      cardCollections: [
+        {
+          id: "",
+          cards: [],
+        },
+      ],
       activeCollectionIndex: 0,
     };
 
@@ -26,7 +29,7 @@ class App extends Component {
       .then((res) => {
         const collections = res.data;
         this.setState({
-          cardCollections: collections
+          cardCollections: collections,
         });
       })
       .catch((err) => {
@@ -45,11 +48,13 @@ class App extends Component {
     {
       /*Prevent the component from rendering until data has been fetched in app.jsx*/
     }
-    console.log(this.state.cardCollections.cards)
-    let collection = this.state.cardCollections[this.state.activeCollectionIndex]
+    let collection = this.state.cardCollections[
+      this.state.activeCollectionIndex
+    ];
     let cards = collection.cards;
+    let id = collection._id;
+    console.log(id);
     console.log(cards);
-    
 
     return (
       <div>
@@ -65,8 +70,7 @@ class App extends Component {
               />
             </div>
             <div className="col-md-8">
-              <CardDisplay cards={cards}        
-              />
+              <CardDisplay cards={cards} collectionId={id} />
             </div>
           </div>
         </div>
