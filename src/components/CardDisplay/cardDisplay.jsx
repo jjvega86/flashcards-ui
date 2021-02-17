@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./CardDisplay.css";
 import Card from "./Card/Card";
 import CardCounter from "./CardCounter/CardCounter";
+import CardForm from './CardAdder/CardForm';
 
 class CardDisplay extends Component {
   constructor(props) {
